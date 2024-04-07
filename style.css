@@ -1,0 +1,249 @@
+/* Start Global Rules */
+/* *: Universal Selector */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-zero: #221f1f;
+    --color-one: #2196F3;
+    --color-two: #777;
+    --color-three: #ececec;
+    --color-four: #ff4c4c;
+    --color-five: #6a737b;
+    --color-six: #44c7f4;
+    --color-seven: #3178c6;
+    --color-eight: #e50914;
+    --color-ten: #f5f5f1;
+    --color-eleven: #fff000;
+    --color-twelve: #ed008c;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* font-family: 'Cairo', sans-serif; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-zero);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+
+/* Start Styling */
+.to-do.container {
+    min-height: 100px;
+    /* border: 1px solid var(--color-ten); */
+}
+
+/* Start Input Station */
+.input {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.input input {
+    background-color: var(--color-three);
+    padding: 0 20px;
+    font-size: 20px;
+    color: var(--color-zero);
+    width: 100%;
+    margin-bottom: 25px;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    caret-color: var(--color-eight);
+}
+
+.input input::placeholder {
+    transition: 0.3s;
+}
+
+.input input:focus::placeholder {
+    color: transparent;
+}
+
+.input .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.input .options button {
+    user-select: none;
+    padding: 5px 0;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--color-eleven);
+    color: black;
+    width: 150px;
+}
+
+@media (max-width: 374px) {
+    .input .options {
+        flex-direction: column-reverse;
+    }
+
+    .input .options button {
+        display: block;
+        width: 100%;
+    }
+}
+
+.input .options button.delete {
+    background-color: var(--color-eight);
+    color: white;
+}
+
+.input button.add:hover {
+    background-color: #e4d503;
+}
+
+.input button.delete:hover {
+    background-color: #c00f17;
+}
+
+/* End Input Station */
+.to-do.container h1 {
+    text-align: center;
+    color: var(--color-ten);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    /*  */
+    font-family: "Dancing Script", cursive;
+    font-size: 70px;
+    /* font-family: "Permanent Marker", cursive; */
+    /* font-family: "Loved by the King", cursive; */
+}
+
+.to-do.container h1 i {
+    color: #e4d503;
+    border-radius: 50%;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.to-do.container h1:hover i {
+    /* color: red; */
+    box-shadow: 0px 4px 10px rgba(228, 213, 3, 0.5);
+    box-shadow: 0px 8px 20px rgba(228, 213, 3, 0.8);
+    box-shadow: 0px 0px 20px 8px rgba(228, 213, 3, 0.8);
+}
+
+/* Start Tasks */
+
+.to-do.container .tasks {
+    margin-bottom: 50px;
+    padding: 25px;
+    border: 3px solid var(--color-three);
+    border-radius: 5px;
+}
+
+.to-do.container .tasks .task {
+    padding: 10px 25px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.to-do.container .tasks .task:hover {
+    background-color: var(--color-three);
+}
+
+.to-do.container .tasks .task:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.to-do.container .tasks .task.done {
+    opacity: 0.5;
+}
+
+.to-do.container .tasks .task.done span {
+    text-decoration: line-through;
+}
+
+.to-do.container .tasks .task span {
+    color: var(--color-zero);
+    font-size: 20px;
+    user-select: none;
+    /* font-weight: bold; */
+}
+
+.to-do.container .tasks .task button {
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--color-four);
+    border: none;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 5px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 550px) {
+    .to-do.container .tasks .task button {
+        width: 100%;
+    }
+}
+
+.to-do.container .tasks .task button:hover {
+    background-color: var(--color-eight);
+}
+
+/* End Tasks */
+
+/* End Styling */
